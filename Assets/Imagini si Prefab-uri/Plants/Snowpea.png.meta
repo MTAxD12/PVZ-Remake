@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ddf22c8dd9d76554dbe9ac116d4616ba
+guid: e1b6d03061e0f724e95e1bf026323de8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8733941156250407944
-    second: 200x200_0
+      213: 2201535037821921783
+    second: Snowpea_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 200x200_0
+      name: Snowpea_0
       rect:
         serializedVersion: 2
         x: 3
         y: 8
-        width: 194
-        height: 184
+        width: 191
+        height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8fba784facecac680800000000000000
-      internalID: -8733941156250407944
+      spriteID: 7f9a3f1e37c6d8e10800000000000000
+      internalID: 2201535037821921783
       vertices: []
       indices: 
       edges: []

@@ -48,7 +48,7 @@ public class Gamemanager : MonoBehaviour
         if (isFollowingCursor)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint((Vector2)Input.mousePosition);
-            hoveringPlant.transform.position = FindNearestSnapPoint(mousePos);
+            hoveringPlant.transform.position = FindNearestSnapPoint(mousePos).transform.position;
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Destroy(hoveringPlant);
@@ -57,16 +57,24 @@ public class Gamemanager : MonoBehaviour
             }
             if(Input.GetMouseButtonDown(0))
             {
-                GameObject Plant = Instantiate(plantsToSpawn[hoverintPlantID], hoveringPlant.transform.position,
-                    Quaternion.identity, FindNearestSnapPointGO(hoveringPlant.transform.position));
-                isFollowingCursor = false;
-                Destroy(hoveringPlant);
-                hoveringPlant = null;
+                Transform snapPoint = FindNearestSnapPoint(hoveringPlant.transform.position);
+                if (snapPoint.childCount == 0)
+                {
+                    GameObject Plant = Instantiate(plantsToSpawn[hoverintPlantID], hoveringPlant.transform.position,
+                    Quaternion.identity, snapPoint);
+                    isFollowingCursor = false;
+                    Destroy(hoveringPlant);
+                    hoveringPlant = null;
 
-                MinusSun(hoveringPlantCost);
-                plantsHUD[hoverintPlantID].GetComponent<PlantCard>().StartCooldown();
-                hoverintPlantID = -1;
-                hoveringPlantCost = -1;
+                    MinusSun(hoveringPlantCost);
+                    plantsHUD[hoverintPlantID].GetComponent<PlantCard>().StartCooldown();
+                    hoverintPlantID = -1;
+                    hoveringPlantCost = -1;
+                }
+                else
+                {
+                    Debug.Log("e ocupat nene");
+                }
             }
         }
     }
@@ -122,25 +130,8 @@ public class Gamemanager : MonoBehaviour
             snapPoints.Add(snapPoint);
         }
     }
-    public Vector2 FindNearestSnapPoint(Vector2 position)
-    {
-        Transform nearestPoint = null;
-        float minDistance = Mathf.Infinity;
 
-        foreach (Transform snapPoint in snapPoints)
-        {
-            float distance = Vector2.Distance(new Vector2(position.x, position.y), new Vector2(snapPoint.position.x, snapPoint.position.y));
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                nearestPoint = snapPoint;
-            }
-        }
-
-        return (Vector2)nearestPoint.position;
-    }
-
-    public Transform FindNearestSnapPointGO(Vector2 position)
+    public Transform FindNearestSnapPoint(Vector2 position)
     {
         Transform nearestPoint = null;
         float minDistance = Mathf.Infinity;

@@ -6574,11 +6574,13 @@ MonoBehaviour:
   - {fileID: 3049883292846709688, guid: c69c0d9115bec754fabd661a442e67c9, type: 3}
   - {fileID: 3444500388802396410, guid: 306535c64f3982543bd56f86d893f61b, type: 3}
   - {fileID: 8837912394049002922, guid: 4bcc733989b17cf4e86289b95635c1aa, type: 3}
+  - {fileID: 1623913292980919483, guid: 5d132837951c4354bbac90dcb0635dc3, type: 3}
   plantsToSpawn:
   - {fileID: 3752927234550585765, guid: 9bdbcf9dad8b95f42ae058d37962a648, type: 3}
   - {fileID: 4661672509517958557, guid: df10e380882e284479859806c8acc620, type: 3}
   - {fileID: 4113238681025309360, guid: f3c788c7c9f1df54db7469257ed0f7b1, type: 3}
   - {fileID: 5850053845556266599, guid: ba6a3f49e092baf42b4cd9f81d7ca6a3, type: 3}
+  - {fileID: 4911308267975617230, guid: 8f2cd84fb7cc81f4e95862f39be84c09, type: 3}
   snapPointsParent: {fileID: 659225409}
   snapPoints: []
   isFollowingCursor: 0

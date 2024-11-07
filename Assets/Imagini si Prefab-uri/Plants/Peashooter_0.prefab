@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1888481247343487278, guid: d486b9450988aba49a7746820fff5e55, type: 3}
   rechargeTime: 3
-  range: 10
+  range: 15
   bulletMask:
     serializedVersion: 2
     m_Bits: 128
