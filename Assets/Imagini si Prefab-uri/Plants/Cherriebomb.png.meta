@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 28cdb016d2edfcc428535f26cc8e2102
+guid: 919ad622c3c55314b85504fa9116a1b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2612405464071668654
-    second: Peanut_Card_0
+      213: -8733941156250407944
+    second: 200x200_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Peanut_Card_0
+      name: 200x200_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea3084fade0214420800000000000000
-      internalID: 2612405464071668654
+      spriteID: 8fba784facecac680800000000000000
+      internalID: -8733941156250407944
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Peanut_Card_0: 2612405464071668654
+      200x200_0: -8733941156250407944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

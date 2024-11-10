@@ -50,6 +50,8 @@ public class Zombie : MonoBehaviour
 
         if (!isEating)
             transform.position -= new Vector3(currentSpeed * Time.fixedDeltaTime, 0, 0);
+        if (transform.position.x < -7.5)
+            Die();
 
     }
 

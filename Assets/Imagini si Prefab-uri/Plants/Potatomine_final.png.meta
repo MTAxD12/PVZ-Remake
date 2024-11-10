@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 33b4a70cf43f8a1458befd615099f8f7
+guid: 58c5f999720fc7140bc28e7140b33cd9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5623483113986882214
-    second: Halapenio 1_0
+      213: -8402522230158892884
+    second: Potatomine_final_0
+  - first:
+      213: -8582278558207032788
+    second: Potatomine_final_1
+  - first:
+      213: 7687460060756028252
+    second: Potatomine_final_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Halapenio 1_0
+      name: Potatomine_final_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 200
-        height: 200
+        y: 19
+        width: 12
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6aa78910910aa0e40800000000000000
-      internalID: 5623483113986882214
+      spriteID: ca06e06dc8e346b80800000000000000
+      internalID: -8402522230158892884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potatomine_final_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 195
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c224e964f1f95e880800000000000000
+      internalID: -8582278558207032788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potatomine_final_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5bad5202385faa60800000000000000
+      internalID: 7687460060756028252
       vertices: []
       indices: 
       edges: []
@@ -147,8 +197,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Halapenio 1_0: 5623483113986882214
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

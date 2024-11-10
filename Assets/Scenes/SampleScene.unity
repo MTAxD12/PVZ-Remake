@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &44001031
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 44001030}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.14, y: 0.57, z: 0}
+  m_LocalPosition: {x: 10, y: -3.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3170,6 +3170,37 @@ Transform:
   - {fileID: 414052759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &737563509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737563510}
+  m_Layer: 0
+  m_Name: SP4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &737563510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737563509}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.9, y: -2.07, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 883417826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &761823095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,6 +3946,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1569664792}
   isOccupied: 0
+--- !u!1 &883417825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883417826}
+  m_Layer: 0
+  m_Name: LawnmowerSpawnPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &883417826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883417825}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1622040876}
+  - {fileID: 1380520264}
+  - {fileID: 1509052531}
+  - {fileID: 737563510}
+  - {fileID: 2041147291}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942826788
 GameObject:
   m_ObjectHideFlags: 0
@@ -5986,6 +6053,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1569664792}
   isOccupied: 0
+--- !u!1 &1380520263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1380520264}
+  m_Layer: 0
+  m_Name: SP2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1380520264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380520263}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.9, y: 1.05, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 883417826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1385615665
 GameObject:
   m_ObjectHideFlags: 0
@@ -6386,6 +6484,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1569664792}
   isOccupied: 0
+--- !u!1 &1509052530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509052531}
+  m_Layer: 0
+  m_Name: SP3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1509052531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509052530}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.9, y: -0.58, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 883417826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1524121279
 GameObject:
   m_ObjectHideFlags: 0
@@ -6575,14 +6704,21 @@ MonoBehaviour:
   - {fileID: 3444500388802396410, guid: 306535c64f3982543bd56f86d893f61b, type: 3}
   - {fileID: 8837912394049002922, guid: 4bcc733989b17cf4e86289b95635c1aa, type: 3}
   - {fileID: 1623913292980919483, guid: 5d132837951c4354bbac90dcb0635dc3, type: 3}
+  - {fileID: 3924300288586070135, guid: 2cd810eaa57269a4788b2ae25b0a4652, type: 3}
+  - {fileID: 8711299254753142386, guid: db08334de751e954695be98459d889eb, type: 3}
   plantsToSpawn:
   - {fileID: 3752927234550585765, guid: 9bdbcf9dad8b95f42ae058d37962a648, type: 3}
   - {fileID: 4661672509517958557, guid: df10e380882e284479859806c8acc620, type: 3}
   - {fileID: 4113238681025309360, guid: f3c788c7c9f1df54db7469257ed0f7b1, type: 3}
   - {fileID: 5850053845556266599, guid: ba6a3f49e092baf42b4cd9f81d7ca6a3, type: 3}
   - {fileID: 4911308267975617230, guid: 8f2cd84fb7cc81f4e95862f39be84c09, type: 3}
+  - {fileID: 2841818486047861251, guid: 8c27eab18a0af9d47ae8b8e0c751e2af, type: 3}
+  - {fileID: 8867474595209728240, guid: 6e0d3cba1a308bd44af7922c1184c22f, type: 3}
   snapPointsParent: {fileID: 659225409}
   snapPoints: []
+  lawnMowerPrefab: {fileID: 352225740660321368, guid: da5fb052c89e07d49a6ddaad7bfecd47, type: 3}
+  lawnMowersParent: {fileID: 883417826}
+  lawnMowerSpawnPoints: []
   isFollowingCursor: 0
 --- !u!4 &1569664793
 Transform:
@@ -6613,12 +6749,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieTypes:
   - {fileID: 7993623229852846522, guid: 6e088c26cb2413e4dbece072c0744543, type: 3}
-  spawnPoints:
-  - {fileID: 2029892578}
-  - {fileID: 1872511728}
-  - {fileID: 1746017277}
-  - {fileID: 1024700514}
-  - {fileID: 442610424}
+  spawnPoints: []
+  spawnPointsParent: {fileID: 979877325}
 --- !u!114 &1569664795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6782,6 +6914,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1569664792}
   isOccupied: 0
+--- !u!1 &1622040875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622040876}
+  m_Layer: 0
+  m_Name: SP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1622040876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622040875}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.9, y: 2.66, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 883417826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1689196222
 GameObject:
   m_ObjectHideFlags: 0
@@ -7992,6 +8155,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 979877325}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2041147290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2041147291}
+  m_Layer: 0
+  m_Name: SP5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2041147291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041147290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.9, y: -3.9, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 883417826}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -8004,3 +8198,4 @@ SceneRoots:
   - {fileID: 1874735769}
   - {fileID: 1569664793}
   - {fileID: 44001032}
+  - {fileID: 883417826}

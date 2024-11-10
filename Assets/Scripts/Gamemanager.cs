@@ -9,20 +9,24 @@ public class Gamemanager : MonoBehaviour
     public int sunAmount = 0;
     public static Gamemanager Instance { get; private set; }
 
-    public TextMeshProUGUI sunText;
+    [SerializeField] private TextMeshProUGUI sunText;
 
-    public Transform spawningPlants;
-    public GameObject[] plantsHUD;
-    public GameObject[] plantsToSpawn;
+    [SerializeField] private Transform spawningPlants;
+    [SerializeField] private GameObject[] plantsHUD;
+    [SerializeField] private GameObject[] plantsToSpawn;
   
-    public Transform snapPointsParent; 
-    public List<Transform> snapPoints = new List<Transform>();
+    [SerializeField] private Transform snapPointsParent; 
+    [SerializeField] private List<Transform> snapPoints = new List<Transform>();
+
+    [SerializeField] private GameObject lawnMowerPrefab;
+    [SerializeField] private Transform lawnMowersParent;
+    [SerializeField] private List<Transform> lawnMowerSpawnPoints = new List<Transform>();
 
     private GameObject hoveringPlant;
     private int hoverintPlantID = -1;
     private int hoveringPlantCost;
 
-    public bool isFollowingCursor = false;
+    [SerializeField] private bool isFollowingCursor = false;
  
 
     private void Awake()
@@ -40,6 +44,7 @@ public class Gamemanager : MonoBehaviour
     void Start()
     {
         SpawnHUDPlants();
+        SpawnLawnMowers();
         LoadSnapPoints();
         AddSun(50);
     }
@@ -85,6 +90,16 @@ public class Gamemanager : MonoBehaviour
             plantsHUD[i] = Instantiate(plantsHUD[i], spawningPlants.position, Quaternion.identity, spawningPlants);
         }
     }
+
+    void SpawnLawnMowers()
+    {
+        foreach(Transform t in lawnMowersParent.transform)
+        {
+            GameObject lm = Instantiate(lawnMowerPrefab, t.position, Quaternion.identity, t);
+
+        }
+    }
+
     public void StartHoveringPlant(int id, int cost)
     {
         if (!isFollowingCursor)

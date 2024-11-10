@@ -1,13 +1,17 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Zombiespawner : MonoBehaviour
 {
-    public GameObject[] zombieTypes;
-    public Transform[] spawnPoints;
+    [SerializeField] private List<GameObject> zombieTypes = new List<GameObject>();
+    [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
+    [SerializeField] private Transform spawnPointsParent;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        LoadSpawnPoints();
         InvokeRepeating("SpawnZombie", 0f, 20f); // 20, 10
     }
 
@@ -16,11 +20,19 @@ public class Zombiespawner : MonoBehaviour
     {
 
     }
+    
+    void LoadSpawnPoints()
+    {
+        foreach (Transform t in spawnPointsParent)
+        {
+            spawnPoints.Add(t);
+        }
+    }
 
     void SpawnZombie()
     {
-        int randomLine = Random.Range(0, spawnPoints.Length);
-        int randomZombie = Random.Range(0, zombieTypes.Length);
+        int randomLine = Random.Range(0, spawnPoints.Count);
+        int randomZombie = Random.Range(0, zombieTypes.Count);
         GameObject Zombie = Instantiate(zombieTypes[randomZombie], spawnPoints[randomLine]);
 
     }
