@@ -3,47 +3,55 @@
   "WorkspaceRootPath": "C:\\Proiecte unity\\PVZ-Remake\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|c:\\proiecte unity\\pvz-remake\\assets\\scripts\\lawnmower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\lawnmower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|c:\\proiecte unity\\pvz-remake\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\zombiespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\zombiespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\squash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\squash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|c:\\proiecte unity\\pvz-remake\\assets\\scripts\\zombie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\zombie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\potatomine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\potatomine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\plantcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\plantcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\snowpea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\snowpea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\cherriebomb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cherriebomb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|c:\\proiecte unity\\pvz-remake\\assets\\scripts\\sun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\zombie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\zombie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\zombiecone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\zombiecone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\shovel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shovel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\plantcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\plantcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\lawnmower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\lawnmower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\zombiebucket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\zombiebucket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\squash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\squash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\snowpea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\snowpea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|C:\\Proiecte unity\\PVZ-Remake\\assets\\scripts\\sun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5952DEB7-EACD-2EA6-23FC-DB4E52C681AD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -66,44 +74,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Zombie.cs",
-              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombie.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Zombie.cs",
-              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombie.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Zombie.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAmwCEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "PlantCard.cs",
+              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\PlantCard.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlantCard.cs",
+              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\PlantCard.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlantCard.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAIA5wBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T03:25:57.975Z",
+              "WhenOpened": "2024-11-07T03:27:14.406Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Shovel.cs",
+              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Shovel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Shovel.cs",
+              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Shovel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Shovel.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T10:51:07.651Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Lawnmower.cs",
-              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Lawnmower.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Lawnmower.cs",
-              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Lawnmower.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Lawnmower.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwB4AAAAuAAAAAAAAAA==",
+              "Title": "Gamemanager.cs",
+              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Gamemanager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager.cs",
+              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Gamemanager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gamemanager.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAcwOYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:46:11.408Z",
+              "WhenOpened": "2024-11-07T02:56:31.095Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Zombiecone.cs",
+              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombiecone.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Zombiecone.cs",
+              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombiecone.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Zombiecone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T17:23:18.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Potatomine.cs",
               "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Potatomine.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Potatomine.cs",
               "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Potatomine.cs",
               "RelativeToolTip": "Assets\\Scripts\\Potatomine.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T02:19:33.7Z",
               "EditorCaption": ""
@@ -111,32 +147,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Plant.cs",
-              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Plant.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Plant.cs",
-              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Plant.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Plant.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T16:02:50.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Zombiespawner.cs",
               "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombiespawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Zombiespawner.cs",
               "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombiespawner.cs",
               "RelativeToolTip": "Assets\\Scripts\\Zombiespawner.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAuwCEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T15:59:29.115Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "Cherriebomb.cs",
               "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Cherriebomb.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Cherriebomb.cs",
@@ -149,20 +172,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Gamemanager.cs",
-              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Gamemanager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager.cs",
-              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Gamemanager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Zombie.cs",
+              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombie.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Zombie.cs",
+              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombie.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Zombie.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAowBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T02:56:31.095Z",
+              "WhenOpened": "2024-11-07T03:25:57.975Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
+              "Title": "Lawnmower.cs",
+              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Lawnmower.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Lawnmower.cs",
+              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Lawnmower.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Lawnmower.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T15:46:11.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Zombiebucket.cs",
+              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombiebucket.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Zombiebucket.cs",
+              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Zombiebucket.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Zombiebucket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T22:30:11.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Squash.cs",
               "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Squash.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Squash.cs",
@@ -170,12 +217,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Squash.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAuwBUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T03:26:37.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T03:26:37.343Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Snowpea.cs",
               "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Snowpea.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Snowpea.cs",
@@ -183,25 +229,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Snowpea.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T03:21:18.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T03:21:18.205Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PlantCard.cs",
-              "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\PlantCard.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlantCard.cs",
-              "ToolTip": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\PlantCard.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlantCard.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAlwC0AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T03:27:14.406Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Sun.cs",
               "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Sun.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Sun.cs",
@@ -209,12 +241,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Sun.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T16:00:34.199Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T16:00:34.199Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Peashooter.cs",
               "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Peashooter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Peashooter.cs",
@@ -226,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "SnapPoint.cs",
               "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\SnapPoint.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SnapPoint.cs",
@@ -238,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Proiecte unity\\PVZ-Remake\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",

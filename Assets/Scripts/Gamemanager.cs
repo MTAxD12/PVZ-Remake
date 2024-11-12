@@ -9,24 +9,40 @@ public class Gamemanager : MonoBehaviour
     public int sunAmount = 0;
     public static Gamemanager Instance { get; private set; }
 
+    //sun
     [SerializeField] private TextMeshProUGUI sunText;
 
+    //hud plants
     [SerializeField] private Transform spawningPlants;
     [SerializeField] private GameObject[] plantsHUD;
     [SerializeField] private GameObject[] plantsToSpawn;
   
+    //snap points
     [SerializeField] private Transform snapPointsParent; 
     [SerializeField] private List<Transform> snapPoints = new List<Transform>();
 
+    //lawn mowers
     [SerializeField] private GameObject lawnMowerPrefab;
     [SerializeField] private Transform lawnMowersParent;
     [SerializeField] private List<Transform> lawnMowerSpawnPoints = new List<Transform>();
 
+    //shovel
+    [SerializeField] private Sprite shovelSprite;
+    private GameObject shovel;
+    private GameObject hoveringDestroyingPlant;
+    private Color shovelColor = new Color(1f, 0.5f, 0.5f);
+    private Color normalColor = new Color(1f, 1f, 1f);
+    private Transform currentSnapPoint;
+    private Transform prevSnapPoint;
+
+    //hovering plant
     private GameObject hoveringPlant;
     private int hoverintPlantID = -1;
     private int hoveringPlantCost;
 
-    [SerializeField] private bool isFollowingCursor = false;
+    //bools for update
+    public bool isFollowingCursor = false;
+    public bool isUsingShovel = false;
  
 
     private void Awake()
@@ -54,6 +70,7 @@ public class Gamemanager : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint((Vector2)Input.mousePosition);
             hoveringPlant.transform.position = FindNearestSnapPoint(mousePos).transform.position;
+            
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Destroy(hoveringPlant);
@@ -82,6 +99,54 @@ public class Gamemanager : MonoBehaviour
                 }
             }
         }
+        if(isUsingShovel)
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint((Vector2)Input.mousePosition);
+            shovel.transform.position = mousePos;
+
+            currentSnapPoint = FindNearestSnapPoint(mousePos);
+            if (currentSnapPoint.childCount > 0)
+                currentSnapPoint.GetChild(0).GetComponent<SpriteRenderer>().color = shovelColor;
+
+            if (currentSnapPoint != prevSnapPoint)
+            {
+                if (prevSnapPoint != null && prevSnapPoint.childCount > 0)
+                {
+                    prevSnapPoint.GetChild(0).GetComponent<SpriteRenderer>().color = normalColor;
+                }
+                prevSnapPoint = currentSnapPoint;
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Destroy(shovel);
+                shovel = null;
+                isUsingShovel = false;
+                if (currentSnapPoint.childCount > 0)
+                    currentSnapPoint.GetChild(0).GetComponent<SpriteRenderer>().color = normalColor;
+
+                if (prevSnapPoint.childCount > 0)
+                    prevSnapPoint.GetChild(0).GetComponent<SpriteRenderer>().color = normalColor;
+
+
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                Transform snapPoint = FindNearestSnapPoint(mousePos);
+                if (snapPoint.childCount > 0)
+                {
+                    Destroy(snapPoint.GetChild(0).gameObject);
+                    isUsingShovel = false;
+                    Destroy(shovel);
+                    Destroy(hoveringPlant);
+                    shovel = null;
+                    hoveringPlant = null;
+                }
+                else
+                {
+                    Debug.Log("nu e nici o planta aici");
+                }
+            }
+        }
     }
     void SpawnHUDPlants()
     {
@@ -102,7 +167,7 @@ public class Gamemanager : MonoBehaviour
 
     public void StartHoveringPlant(int id, int cost)
     {
-        if (!isFollowingCursor)
+        if (!isFollowingCursor && !isUsingShovel)
         {
             hoveringPlantCost = cost;
             isFollowingCursor = true;
@@ -118,6 +183,19 @@ public class Gamemanager : MonoBehaviour
 
             hoverintPlantID = id;
 
+        }
+    }
+
+    public void StartHoveringShovel()
+    {
+        if (!isFollowingCursor && !isUsingShovel)
+        {
+            isUsingShovel = true;
+            shovel = new GameObject("Shovel");
+            shovel.AddComponent<SpriteRenderer>();
+            shovel.GetComponent<SpriteRenderer>().sprite = shovelSprite;
+            currentSnapPoint = null;
+            prevSnapPoint = null;
         }
     }
     public void PlaceOnSnapPoint(Transform snapPoint)
