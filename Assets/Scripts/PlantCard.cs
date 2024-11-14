@@ -57,6 +57,7 @@ public class PlantCard : MonoBehaviour
         isCooldown = true;
         remainingCooldownTime = cooldownDuration;
         Invoke("Cooldown", cooldownDuration);
+        UpdateCard();
     }
 
     private void Cooldown()
@@ -89,7 +90,6 @@ public class PlantCard : MonoBehaviour
 
             if (remainingCooldownTime <= 0)
             {
-                remainingCooldownTime = 0;
                 Cooldown();
             }
         }

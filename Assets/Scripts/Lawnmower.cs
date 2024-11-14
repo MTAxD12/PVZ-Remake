@@ -38,6 +38,7 @@ public class Lawnmower : MonoBehaviour
     IEnumerator KillZombie(float delay, GameObject zombie)
     {
         yield return new WaitForSeconds(delay);
-        Destroy(zombie);
+        if(zombie != null)
+            zombie.GetComponent<Zombie>().TakeDamage(1000);
     }
 }

@@ -20,9 +20,17 @@ public class Zombie : MonoBehaviour
 
     private Plant eatingPlant;
     private bool isEating;
+
+    private bool isDead = false;
+    private bool enteredHouse = false;
+
+    private ZombieSpawner zombieSpawner;
+    private Gamemanager gameManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        zombieSpawner = GameObject.Find("GameManage").GetComponent<ZombieSpawner>();
+        gameManager = GameObject.Find("GameManage").GetComponent<Gamemanager>();
         currentSpeed = speed;
         currentEatingSpeed = eatingSpeed;
         slowedSpeed = 0.5f * speed;
@@ -50,8 +58,12 @@ public class Zombie : MonoBehaviour
 
         if (!isEating)
             transform.position -= new Vector3(currentSpeed * Time.fixedDeltaTime, 0, 0);
-        if (transform.position.x < -7.5)
-            Die();
+        if (transform.position.x < -7.8 && !enteredHouse)
+        {
+            gameManager.LoseGame();
+            enteredHouse = true;
+        }
+            
 
     }
 
@@ -108,7 +120,7 @@ public class Zombie : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
+            Die(); // s-ar putea sa trb ienumarator daca face figuri
         }
     }
 
@@ -121,6 +133,13 @@ public class Zombie : MonoBehaviour
 
     private void Die()
     {
+        if (!isDead)
+        {
+            zombieSpawner.zombiesKilledTotal++;
+            zombieSpawner.zombiesKilledCurrent++;
+            isDead = true;
+        }
         Destroy(gameObject);
+
     }
 }
