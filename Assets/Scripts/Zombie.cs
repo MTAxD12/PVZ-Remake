@@ -45,25 +45,52 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (isSlowed)
+        if(!enteredHouse)
         {
-            slowTime -= Time.deltaTime;
-
-            if (slowTime <= 0)
+            if (isSlowed)
             {
-                slowTime = 0;
-                SlowCooldown();
+                slowTime -= Time.deltaTime;
+
+                if (slowTime <= 0)
+                {
+                    slowTime = 0;
+                    SlowCooldown();
+                }
+            }
+
+            if (!isEating)
+                transform.position -= new Vector3(currentSpeed * Time.fixedDeltaTime, 0, 0);
+            if (transform.position.x < -7.8)
+            {
+                enteredHouse = true;
+
+                foreach (Zombie zombie in transform.parent.parent.GetComponentsInChildren<Zombie>())
+                    if (zombie.gameObject != gameObject)
+                        zombie.enabled = false;
+
+                StartCoroutine(EnterHouse());
+
             }
         }
+    }
 
-        if (!isEating)
-            transform.position -= new Vector3(currentSpeed * Time.fixedDeltaTime, 0, 0);
-        if (transform.position.x < -7.8 && !enteredHouse)
+    private IEnumerator EnterHouse()
+    {
+        Vector3 midPos = new Vector3(transform.position.x - 0.2f, -1f, -1f);
+        Vector3 finalPos = new Vector3(-11f, -1f, -1f);
+        while (Vector2.Distance(transform.position, midPos) > 0.01f)
         {
-            gameManager.LoseGame();
-            enteredHouse = true;
+            transform.position = Vector3.MoveTowards(transform.position, midPos, 2 * 1.25f * Time.deltaTime);
+            yield return null;
         }
-            
+
+        while (Vector2.Distance(transform.position, finalPos) > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, finalPos, 1 * Time.deltaTime);
+            yield return null;
+        }
+
+        gameManager.LoseGame();
 
     }
 

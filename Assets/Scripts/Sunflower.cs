@@ -17,7 +17,7 @@ public class Sunflower : MonoBehaviour
         bool stanga = false;
         if (xPos - transform.position.x < 0) stanga = true;
 
-        GameObject sunTemp = Instantiate(sunPrefab, new Vector3(xPos, transform.position.y + 0.5f, -2), Quaternion.identity);
+        GameObject sunTemp = Instantiate(sunPrefab, new Vector3(xPos, transform.position.y + 0.5f, -3), Quaternion.identity);
 
         sunTemp.GetComponent<Sun>().isNatural = false;
         sunTemp.GetComponent<Sun>().initial = new Vector2(xPos, transform.position.y + 0.5f);

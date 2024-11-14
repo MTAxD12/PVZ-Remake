@@ -54,7 +54,7 @@ public class ZombieSpawner : MonoBehaviour
         for (int i = 0; i < wavesCount; i++)
         {
             zombiePercentPerBW.Add(betweenWavePerc / zombiesInBetweenWaves[i]);
-            Debug.Log(zombiePercentPerBW[i]);
+            //Debug.Log(zombiePercentPerBW[i]);
         }
 
         //other

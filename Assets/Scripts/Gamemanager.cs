@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class Gamemanager : MonoBehaviour
 {
-    public int sunAmount = 0;
     public static Gamemanager Instance { get; private set; }
 
     //sun
+    public int sunAmount = 0;
     [SerializeField] private TextMeshProUGUI sunText;
 
     //hud plants
@@ -42,7 +42,13 @@ public class Gamemanager : MonoBehaviour
     public bool isFollowingCursor = false;
     public bool isUsingShovel = false;
 
+    // animations
     public Animator animator;
+
+    //gameStatus
+    public bool isWon = false;
+    public bool isLost = false;
+
 
     private void Awake()
     {
@@ -84,7 +90,8 @@ public class Gamemanager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     isFollowingCursor = false;
-                    hit.collider.GetComponent<SpriteRenderer>().enabled = false;
+                    if(hit.collider)
+                        hit.collider.GetComponent<SpriteRenderer>().enabled = false;
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -235,20 +242,30 @@ public class Gamemanager : MonoBehaviour
 
     public void WinGame()
     {
-        Debug.Log("U won");
+        if(!isWon)
+        {
+            isWon = true;
+
+            Debug.Log("U won");
+        }
     }
 
     public void LoseGame()
     {
-        Transform UIParent = GameObject.Find("Canvas").transform; // de continuat poate pui collider in loc sa verifici x
-        UIParent.GetChild(0).gameObject.SetActive(false);
-        UIParent.GetChild(1).gameObject.SetActive(false);
-        UIParent.GetChild(2).gameObject.SetActive(false);
+        if(!isLost)
+        {
+            isLost = true;
+
+            Transform UIParent = GameObject.Find("Canvas").transform; // de continuat poate pui collider in loc sa verifici x
+            UIParent.GetChild(0).gameObject.SetActive(false);
+            UIParent.GetChild(1).gameObject.SetActive(false);
+            UIParent.GetChild(2).gameObject.SetActive(false);
 
 
-        animator.Play("LoseAnimation");
-        Invoke("RestartScene", 5f);
-        Debug.Log("U lost");
+            animator.Play("LoseAnimation");
+            Invoke("RestartScene", 5f);
+            Debug.Log("U lost");
+        }
     }
 
     private void RestartScene()

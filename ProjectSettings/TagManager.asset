@@ -11,8 +11,8 @@ TagManager:
   - Plant
   - Water
   - UI
-  - Tile
   - Zombie
+  - Tile
   - 
   - 
   - 
@@ -47,14 +47,14 @@ TagManager:
   - name: UI
     uniqueID: 1252893373
     locked: 0
-  - name: Zombie
-    uniqueID: 2833119041
-    locked: 0
   - name: Tiles
     uniqueID: 1163199509
     locked: 0
   - name: Plants
     uniqueID: 2007462115
+    locked: 0
+  - name: Zombie
+    uniqueID: 2833119041
     locked: 0
   - name: Sun
     uniqueID: 4141861653

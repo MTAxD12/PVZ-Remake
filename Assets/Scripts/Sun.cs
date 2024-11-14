@@ -22,7 +22,7 @@ public class Sun : MonoBehaviour
 
         if(!isNatural)
         {
-            desired1 = new Vector3(initial.x, initial.y + 0.5f, -2);
+            desired1 = new Vector3(initial.x, initial.y + 0.5f, -3);
             float ds2off = Random.Range(-0.25f, 0f);
 
             if (stanga)
@@ -30,12 +30,12 @@ public class Sun : MonoBehaviour
             else
                 ds2off = Random.Range(0f, 0.25f);
 
-            desired2 = new Vector3(desired1.x + ds2off, desired1.y - 1f, -2);
+            desired2 = new Vector3(desired1.x + ds2off, desired1.y - 1f, -3);
 
         }
         else
         {   
-            desired1 = new Vector3(initial.x, initial.y - 3, -2);
+            desired1 = new Vector3(initial.x, initial.y - 3, -3);
         }
     }
 
