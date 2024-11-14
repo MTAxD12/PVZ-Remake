@@ -23,7 +23,7 @@ public class Cherriebomb : MonoBehaviour
         if(!isExploding)
         {
             transform.localScale = Vector2.Lerp(transform.localScale, transform.localScale * inflateScale, inflateSpeed * Time.deltaTime);
-            if (transform.localScale.x >= 1.0f * inflateScale * 0.95f)
+            if (transform.localScale.x >= 1.0f * inflateScale * 0.95f && !isExploding)
             {
                 isExploding = true;
                 Invoke("Explode", 0.15f);
@@ -39,8 +39,8 @@ public class Cherriebomb : MonoBehaviour
 
         foreach(Collider2D zombie in zombies)
         {
-            Debug.Log(zombie.transform.name);
-            Destroy(zombie.gameObject);
+            //Debug.Log(zombie.transform.name);
+            zombie.GetComponent<Zombie>().TakeDamage(1000);
         }
 
         gameObject.GetComponent<SpriteRenderer>().sprite = explosionSprite;

@@ -467,9 +467,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  cost: 0
+  cost: 50
   remainingCooldownTime: 0
-  cooldownDuration: 0
+  cooldownDuration: 30
 --- !u!114 &6993924682035805454
 MonoBehaviour:
   m_ObjectHideFlags: 0

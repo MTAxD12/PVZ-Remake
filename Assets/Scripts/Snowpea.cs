@@ -14,7 +14,7 @@ public class Snowpea : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
     }
     private void Update()
     {

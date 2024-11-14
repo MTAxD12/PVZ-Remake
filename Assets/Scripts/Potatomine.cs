@@ -11,7 +11,8 @@ public class Potatomine : MonoBehaviour
     [SerializeField] private LayerMask zombieMask;
     private Collider2D[] zombies;
     private Vector2 center;
-    bool isGrown = false;
+    private bool isGrown = false;
+    private bool isBoom = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,20 +40,21 @@ public class Potatomine : MonoBehaviour
 
             zombies = Physics2D.OverlapBoxAll(center, explosionSize, 0f, zombieMask);
 
-            if (zombies.Length > 0)
+            if (zombies.Length > 0 && !isBoom)
                 Boom();
         }
     }
 
     void Boom()
     {
+        isBoom = true;
         gameObject.GetComponent<SpriteRenderer>().sprite = boomSprite;
         transform.localScale = new Vector2(0.5f, 0.5f);
 
         foreach (Collider2D zombie in zombies)
         {
             Debug.Log(zombie.transform.name);
-            Destroy(zombie.gameObject);
+            zombie.GetComponent<Zombie>().TakeDamage(1000);
         }
         Invoke("DestroyThis", 0.5f);
     }
