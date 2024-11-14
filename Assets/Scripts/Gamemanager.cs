@@ -44,7 +44,7 @@ public class Gamemanager : MonoBehaviour
     void Start()
     {
         SpawnHUDPlants();
-        SpawnLawnMowers();
+        //SpawnLawnMowers();
         LoadSnapPoints();
         AddSun(50);
     }

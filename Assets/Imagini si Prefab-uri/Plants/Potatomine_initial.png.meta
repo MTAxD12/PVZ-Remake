@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Potatomine_initial_0: -1857172536344113916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
