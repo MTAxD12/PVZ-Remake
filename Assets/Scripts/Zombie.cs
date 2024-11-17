@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -78,6 +79,9 @@ public class Zombie : MonoBehaviour
     {
         Vector3 midPos = new Vector3(transform.position.x - 0.2f, -1f, -1f);
         Vector3 finalPos = new Vector3(-11f, -1f, -1f);
+
+        gameManager.LoseGamePre();
+
         while (Vector2.Distance(transform.position, midPos) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(transform.position, midPos, 2 * 1.25f * Time.deltaTime);
@@ -89,9 +93,6 @@ public class Zombie : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, finalPos, 1 * Time.deltaTime);
             yield return null;
         }
-
-        gameManager.LoseGame();
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

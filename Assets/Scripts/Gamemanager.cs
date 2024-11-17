@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,6 +8,9 @@ using UnityEngine.SceneManagement;
 public class Gamemanager : MonoBehaviour
 {
     public static Gamemanager Instance { get; private set; }
+
+    //camera
+    [SerializeField] private GameObject cameraObj;
 
     //sun
     public int sunAmount = 0;
@@ -65,10 +69,11 @@ public class Gamemanager : MonoBehaviour
     void Start()
     {
         SpawnHUDPlants();
-        //SpawnLawnMowers();
+        SpawnLawnMowers();
         LoadSnapPoints();
         AddSun(50);
     }
+
     private void Update()
     {
         if (isFollowingCursor || isUsingShovel)
@@ -155,6 +160,7 @@ public class Gamemanager : MonoBehaviour
             }
         }
     }
+
     void SpawnHUDPlants()
     {
         for (int i = 0; i < plantsHUD.Length; i++)
@@ -201,30 +207,13 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
-    public Transform FindNearestSnapPoint(Vector2 position)
-    {
-        Transform nearestPoint = null;
-        float minDistance = Mathf.Infinity;
-
-        foreach (Transform snapPoint in snapPoints)
-        {
-            float distance = Vector2.Distance(new Vector2(position.x, position.y), new Vector2(snapPoint.position.x, snapPoint.position.y));
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                nearestPoint = snapPoint;
-            }
-        }
-
-        return nearestPoint;
-    }
-
     public void AddSun(int ammount)
     {
         sunAmount += ammount;
         sunText.text = sunAmount.ToString();
         UpdateCards();
     }
+
     public void MinusSun(int ammount)
     {
         sunAmount -= ammount;
@@ -250,27 +239,39 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
-    public void LoseGame()
-    {
-        if(!isLost)
-        {
-            isLost = true;
-
-            Transform UIParent = GameObject.Find("Canvas").transform; // de continuat poate pui collider in loc sa verifici x
-            UIParent.GetChild(0).gameObject.SetActive(false);
-            UIParent.GetChild(1).gameObject.SetActive(false);
-            UIParent.GetChild(2).gameObject.SetActive(false);
-
-
-            animator.Play("LoseAnimation");
-            Invoke("RestartScene", 5f);
-            Debug.Log("U lost");
-        }
-    }
-
     private void RestartScene()
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void LoseGamePre()
+    {
+        StartCoroutine(LoseGame());
+    }
+
+    private IEnumerator LoseGame()
+    {
+
+        Transform UIParent = GameObject.Find("Canvas").transform; // de continuat poate pui collider in loc sa verifici x
+        UIParent.GetChild(0).gameObject.SetActive(false);
+        UIParent.GetChild(1).gameObject.SetActive(false);
+        UIParent.GetChild(2).gameObject.SetActive(false);
+        Debug.Log("U lost");
+     
+
+        Vector3 desiredPos = new Vector3(cameraObj.transform.position.x - 2.5f, 0f, -10f);
+        while (Vector2.Distance(cameraObj.transform.position, desiredPos) > 0.01f)
+        {
+            cameraObj.transform.position = Vector3.MoveTowards(cameraObj.transform.position, desiredPos, 2f * Time.deltaTime);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(2f);
+        animator.Play("LoseAnimation");
+
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
 }

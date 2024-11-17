@@ -7482,6 +7482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c76b74f50bda647b284c5e2231f496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraObj: {fileID: 519420028}
   sunAmount: 0
   sunText: {fileID: 1689196225}
   spawningPlants: {fileID: 1138895692}
