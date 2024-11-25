@@ -7795,7 +7795,7 @@ MonoBehaviour:
   spawningPlants: {fileID: 1138895692}
   plantsHUD: []
   plantsToSpawn: []
-  plantToWin: {fileID: 3049883292846709688, guid: c69c0d9115bec754fabd661a442e67c9, type: 3}
+  plantToWin: {fileID: 3444500388802396410, guid: 306535c64f3982543bd56f86d893f61b, type: 3}
   snapPointsParent: {fileID: 659225409}
   snapPoints: []
   tileMask:

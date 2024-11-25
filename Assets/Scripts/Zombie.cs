@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Zombie : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Zombie : MonoBehaviour
 
     private ZombieSpawner zombieSpawner;
     private Gamemanager gameManager;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         zombieSpawner = GameObject.Find("GameManage").GetComponent<ZombieSpawner>();
@@ -36,6 +37,15 @@ public class Zombie : MonoBehaviour
         currentEatingSpeed = eatingSpeed;
         slowedSpeed = 0.5f * speed;
         slowedEatingSpeed = 2 * eatingSpeed;
+        gameManager.WinGame(gameObject);
+        /*
+        GameObject wonPlant = Instantiate(gameManager.plantToWin, transform.position, Quaternion.identity, GameObject.Find("CanvasOver").transform);
+        wonPlant.GetComponent<PlantCard>().enabled = false;
+        wonPlant.GetComponent<Button>().enabled = false;
+        wonPlant.transform.GetChild(1).GetComponent<Slider>().enabled = false;
+        wonPlant.transform.GetChild(3).gameObject.SetActive(false);
+        wonPlant.AddComponent<WonCard>();
+        */
     }
 
     private void Update()
@@ -43,7 +53,6 @@ public class Zombie : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if(!enteredHouse)
@@ -167,6 +176,11 @@ public class Zombie : MonoBehaviour
             zombieSpawner.zombiesKilledCurrent++;
             isDead = true;
         }
+        if (zombieSpawner.zombiesKilledTotal == zombieSpawner.zombiesMax)
+        {
+            gameManager.WinGame(gameObject);
+        }
+
         Destroy(gameObject);
 
     }

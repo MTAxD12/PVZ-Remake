@@ -63,7 +63,6 @@ public class Squash : MonoBehaviour
         }
 
         Invoke("DestroyInstance", 0.2f);
-
     }
 
     private void DestroyInstance()

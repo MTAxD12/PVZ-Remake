@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -17,9 +18,11 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sunText;
 
     //hud plants
-    [SerializeField] private Transform spawningPlants;
-    [SerializeField] private GameObject[] plantsHUD;
-    [SerializeField] private GameObject[] plantsToSpawn;
+    public Transform spawningPlants;
+    public List<GameObject> plantsHUD = new List<GameObject>();
+    public List<GameObject> plantsToSpawn = new List<GameObject>();
+
+    public GameObject plantToWin;
   
     //snap points
     [SerializeField] private Transform snapPointsParent; 
@@ -47,11 +50,15 @@ public class Gamemanager : MonoBehaviour
     public bool isUsingShovel = false;
 
     // animations
-    public Animator animator;
+    public Animator animatorLose;
+    public Animator animatorWin;
 
     //gameStatus
     public bool isWon = false;
     public bool isLost = false;
+
+    //player stats
+    private PlayerData playerData;
 
 
     private void Awake()
@@ -68,10 +75,14 @@ public class Gamemanager : MonoBehaviour
 
     void Start()
     {
+        playerData = SaveSystem.LoadPlayerData();
+        Debug.Log($"Nivel curent: {playerData.currentLevel}, Cărți deblocate: {string.Join(", ", playerData.unlockedCards)}");
+
         SpawnHUDPlants();
         SpawnLawnMowers();
         LoadSnapPoints();
         AddSun(50);
+
     }
 
     private void Update()
@@ -161,11 +172,26 @@ public class Gamemanager : MonoBehaviour
         }
     }
 
+    private string GetNewCardForLevel(int level)
+    {
+        // Exemplu de cărți bazate pe nivel
+        string[] allCards = { "Peashooter", "Sunflower", "Wallnut" };
+        if (level < allCards.Length)
+        {
+            return allCards[level];
+        }
+        else
+        {
+            return "Eroare";
+        }
+    }
     void SpawnHUDPlants()
     {
-        for (int i = 0; i < plantsHUD.Length; i++)
+        CardManager cardManager = GetComponent<CardManager>();
+        for (int i = 0; i < playerData.unlockedCards.Count; i++)
         {
-            plantsHUD[i] = Instantiate(plantsHUD[i], spawningPlants.position, Quaternion.identity, spawningPlants);
+            plantsHUD.Add(Instantiate(cardManager.GetCardPrefab(playerData.unlockedCards[i]), spawningPlants.position, Quaternion.identity, spawningPlants));
+            plantsToSpawn.Add(cardManager.GetCardToSpawnPrefab(playerData.unlockedCards[i]));
         }
     }
 
@@ -223,20 +249,43 @@ public class Gamemanager : MonoBehaviour
 
     private void UpdateCards()
     {
-        for (int i = 0; i < plantsHUD.Length; i++)
+        for (int i = 0; i < plantsHUD.Count; i++)
         {
             plantsHUD[i].GetComponent<PlantCard>().UpdateCard();
         }
-    }
+    }   
 
-    public void WinGame()
+    public void WinGame(GameObject lastZombie)
     {
-        if(!isWon)
+        ZombieSpawner zombieSpawner = GetComponent<ZombieSpawner>();
+        if (zombieSpawner.zombiesKilledTotal == zombieSpawner.zombiesMax || 1 == 1) // 1 == 1 e ptr teste
         {
-            isWon = true;
+            GameObject wonPlant = Instantiate(plantToWin, lastZombie.transform.position, Quaternion.identity, GameObject.Find("CanvasOver").transform);
+            wonPlant.GetComponent<PlantCard>().enabled = false;
+            wonPlant.GetComponent<Button>().onClick.RemoveAllListeners();
+            wonPlant.transform.GetChild(1).GetComponent<Slider>().enabled = false;
+            wonPlant.transform.GetChild(3).gameObject.SetActive(false);
+            wonPlant.AddComponent<WonCard>();
 
-            Debug.Log("U won");
         }
+        GetComponent<ZombieSpawner>().enabled = false;
+        GetComponent<Sunspawner>().enabled = false;
+        string newCard = GetNewCardForLevel(playerData.currentLevel);
+        if (!playerData.unlockedCards.Contains(newCard))
+        {
+            playerData.unlockedCards.Add(newCard);
+            Debug.Log($"Noua carte câștigată: {newCard}");
+        }
+
+        // Avansează la nivelul următor
+        playerData.currentLevel++;
+        SaveSystem.SavePlayerData(playerData);
+        Debug.Log("U won");
+    }
+   
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void RestartScene()
@@ -268,10 +317,11 @@ public class Gamemanager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
-        animator.Play("LoseAnimation");
+        animatorLose.Play("LoseAnimation");
 
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
+
 }

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f76da24e5f688341b8bf0a2b8882b0f, type: 3}
+  m_Name: Sunflower
+  m_EditorClassIdentifier: 
+  cardName: Sunflower
+  cardPrefab: {fileID: 3049883292846709688, guid: c69c0d9115bec754fabd661a442e67c9, type: 3}
+  cardToSpawnPrefab: {fileID: 4661672509517958557, guid: df10e380882e284479859806c8acc620, type: 3}

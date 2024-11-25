@@ -11,9 +11,9 @@ TagManager:
   - Plant
   - Water
   - UI
+  - Lawnmower
   - Zombie
   - Tile
-  - 
   - 
   - 
   - 
@@ -53,14 +53,20 @@ TagManager:
   - name: Plants
     uniqueID: 2007462115
     locked: 0
-  - name: Zombie
-    uniqueID: 2833119041
-    locked: 0
   - name: Lawnmower
     uniqueID: 2498706089
     locked: 0
+  - name: Zombie
+    uniqueID: 2833119041
+    locked: 0
   - name: Sun
     uniqueID: 4141861653
+    locked: 0
+  - name: ProgressBar
+    uniqueID: 2003919333
+    locked: 0
+  - name: WonCard
+    uniqueID: 4027628079
     locked: 0
   - name: Default
     uniqueID: 0

@@ -112,7 +112,6 @@ public class ZombieSpawner : MonoBehaviour
         else if (zombiesSpawned == zombiesKilledTotal && !isWon)
         {
             isWon = true;
-            gameManager.WinGame();
         }
     }
 

@@ -26,4 +26,8 @@ public class Sunspawner : MonoBehaviour
         sunTemp.GetComponent<Sun>().initial = initial;
             
     }
+    void OnDisable()
+    {
+        CancelInvoke("SpawnSun");
+    }
 }
