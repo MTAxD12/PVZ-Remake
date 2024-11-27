@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -175,15 +174,17 @@ public class Gamemanager : MonoBehaviour
     private string GetNewCardForLevel(int level)
     {
         // Exemplu de cărți bazate pe nivel
-        string[] allCards = { "Peashooter", "Sunflower", "Wallnut" };
+        string[] allCards = { "Peashooter", "Sunflower", "Cherriebomb", "Wallnut", "Potatomine", "Snowpea", "Squash", };
         if (level < allCards.Length)
         {
             return allCards[level];
         }
-        else
+        else if (level == 7)
         {
-            return "Eroare";
+            return "OMB";
         }
+        else
+            return null;
     }
     void SpawnHUDPlants()
     {
@@ -258,34 +259,54 @@ public class Gamemanager : MonoBehaviour
     public void WinGame(GameObject lastZombie)
     {
         ZombieSpawner zombieSpawner = GetComponent<ZombieSpawner>();
-        if (zombieSpawner.zombiesKilledTotal == zombieSpawner.zombiesMax || 1 == 1) // 1 == 1 e ptr teste
+        if (zombieSpawner.zombiesKilledTotal == zombieSpawner.zombiesMax) // 1 == 1 e ptr teste
         {
             GameObject wonPlant = Instantiate(plantToWin, lastZombie.transform.position, Quaternion.identity, GameObject.Find("CanvasOver").transform);
-            wonPlant.GetComponent<PlantCard>().enabled = false;
-            wonPlant.GetComponent<Button>().onClick.RemoveAllListeners();
-            wonPlant.transform.GetChild(1).GetComponent<Slider>().enabled = false;
-            wonPlant.transform.GetChild(3).gameObject.SetActive(false);
+            Debug.Log("daa");
+            if(playerData.currentLevel < 7)
+            {
+                wonPlant.GetComponent<PlantCard>().enabled = false;
+                wonPlant.GetComponent<Button>().onClick.RemoveAllListeners();
+                wonPlant.transform.GetChild(1).GetComponent<Slider>().enabled = false;
+                wonPlant.transform.GetChild(3).gameObject.SetActive(false);
+            }
             wonPlant.AddComponent<WonCard>();
-
         }
         GetComponent<ZombieSpawner>().enabled = false;
         GetComponent<Sunspawner>().enabled = false;
         string newCard = GetNewCardForLevel(playerData.currentLevel);
         if (!playerData.unlockedCards.Contains(newCard))
         {
-            playerData.unlockedCards.Add(newCard);
+            if(playerData.currentLevel < 7) // 7 == last level
+                playerData.unlockedCards.Add(newCard);
             Debug.Log($"Noua carte câștigată: {newCard}");
         }
 
         // Avansează la nivelul următor
         playerData.currentLevel++;
         SaveSystem.SavePlayerData(playerData);
+        isWon = true;
         Debug.Log("U won");
     }
    
     public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void RestartWithPlants()
+    {
+        playerData.currentLevel = 1;
+
+        SceneManager.LoadScene(0);
+    }
+
+    public void RestartWithoutPlants()
+    {
+        playerData = null;
+        playerData.unlockedCards.Clear();
+
+        SceneManager.LoadScene(0);
     }
 
     private void RestartScene()
@@ -302,10 +323,11 @@ public class Gamemanager : MonoBehaviour
     private IEnumerator LoseGame()
     {
 
-        Transform UIParent = GameObject.Find("Canvas").transform; // de continuat poate pui collider in loc sa verifici x
-        UIParent.GetChild(0).gameObject.SetActive(false);
-        UIParent.GetChild(1).gameObject.SetActive(false);
-        UIParent.GetChild(2).gameObject.SetActive(false);
+        Transform UIParentBehind = GameObject.Find("CanvasBehind").transform; // de continuat poate pui collider in loc sa verifici x
+        Transform UIParentOver = GameObject.Find("CanvasOver").transform;
+        UIParentBehind.GetChild(0).gameObject.SetActive(false);
+        UIParentBehind.GetChild(1).gameObject.SetActive(false);
+        UIParentOver.GetChild(0).gameObject.SetActive(false);
         Debug.Log("U lost");
      
 

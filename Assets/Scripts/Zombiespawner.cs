@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,7 +58,8 @@ public class ZombieSpawner : MonoBehaviour
 
         //other
         gameManager = gameObject.GetComponent<Gamemanager>();
-        zombieRemainingCooldown = 20f;
+        zombieCooldownSpawn = 22.5f;
+        zombieRemainingCooldown = 22.5f;
         zombiesMax = 0;
         for(int i = 0; i < zombiesPerWave.Length; i++) 
             zombiesMax += zombiesPerWave[i];
@@ -122,9 +122,9 @@ public class ZombieSpawner : MonoBehaviour
         isCooldown = true;
         AddSliderValue(zombiePercentPerBW[currentWave]);
 
-        if (zombiesSpawned == 1)
+        if (zombiesSpawned == 5)
             zombieCooldownSpawn = 15f;
-        if (zombiesSpawned == 4)
+        if (zombiesSpawned == 10)
             zombieCooldownSpawn = 12.5f;
         zombieRemainingCooldown = zombieCooldownSpawn;
 
@@ -182,11 +182,11 @@ public class ZombieSpawner : MonoBehaviour
         zombiesSpawned++;
         AddSliderValue(wavePercent);
 
-        GameObject FlagZombie = Instantiate(GetRandomZombieType(), spawnPoints[2].position, Quaternion.identity, spawnPoints[2]);
+        GameObject FlagZombie = Instantiate(GetRandomZombieType(), spawnPoints[spawnPoints.Count / 2].position, Quaternion.identity, spawnPoints[spawnPoints.Count/2]);
 
         yield return new WaitForSeconds(2f);
 
-        int zombiesToSpawnPerLane = zombiesPerWave[currentWave] / 5;
+        int zombiesToSpawnPerLane = zombiesPerWave[currentWave] / spawnPoints.Count;
 
         for (int i = 0; i < zombiesToSpawnPerLane; i++)
         {

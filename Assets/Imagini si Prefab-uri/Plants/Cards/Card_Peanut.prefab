@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502a2ffa10ed58d4cb1199220a0323ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
+  id: 3
   cost: 50
   remainingCooldownTime: 0
   cooldownDuration: 30

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f76da24e5f688341b8bf0a2b8882b0f, type: 3}
+  m_Name: Potatomine
+  m_EditorClassIdentifier: 
+  cardName: Potatomine
+  cardPrefab: {fileID: 8711299254753142386, guid: db08334de751e954695be98459d889eb, type: 3}
+  cardToSpawnPrefab: {fileID: 8867474595209728240, guid: 6e0d3cba1a308bd44af7922c1184c22f, type: 3}

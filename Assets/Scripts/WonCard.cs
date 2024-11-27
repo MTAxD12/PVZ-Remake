@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using System.Runtime.CompilerServices;
 public class WonCard : MonoBehaviour
 {
     private Gamemanager gameManager;
@@ -26,7 +25,7 @@ public class WonCard : MonoBehaviour
 
     private IEnumerator TakeWonCard2()
     {
-        Debug.Log("a intrat");
+        Debug.Log("a intrat");  
         Vector3 finalPos = new Vector3(0, 1.5f, 0);
 
         while (Vector2.Distance(transform.position, finalPos) > 0.01f)

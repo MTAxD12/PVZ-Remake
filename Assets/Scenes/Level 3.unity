@@ -7795,7 +7795,7 @@ MonoBehaviour:
   spawningPlants: {fileID: 1138895692}
   plantsHUD: []
   plantsToSpawn: []
-  plantToWin: {fileID: 3924300288586070135, guid: 2cd810eaa57269a4788b2ae25b0a4652, type: 3}
+  plantToWin: {fileID: 3444500388802396410, guid: 306535c64f3982543bd56f86d893f61b, type: 3}
   snapPointsParent: {fileID: 659225409}
   snapPoints: []
   tileMask:
@@ -7841,7 +7841,6 @@ MonoBehaviour:
   zombieTypes:
   - {fileID: 7993623229852846522, guid: 6e088c26cb2413e4dbece072c0744543, type: 3}
   - {fileID: 1619956039980284486, guid: 3d876a361c6121a4894f72d683bd22d8, type: 3}
-  - {fileID: 7900184972664657650, guid: 19941abacbbcb514cac9e0bf7d8c319b, type: 3}
   spawnPoints:
   - {fileID: 2029892578}
   - {fileID: 1872511728}
@@ -7849,9 +7848,8 @@ MonoBehaviour:
   - {fileID: 1024700514}
   - {fileID: 442610424}
   spawnWeights:
-  - 90
-  - 10
-  - 0
+  - 95
+  - 5
   adjustDifficultyBy: 10
   flagParent: {fileID: 1989662458}
   flagPrefab: {fileID: 5080232644757875422, guid: 9d7a21901c95c6d4691e6e005a4bb921, type: 3}
@@ -7864,7 +7862,7 @@ MonoBehaviour:
   wavesCount: 1
   zombiesPerWave: 05000000
   activeWave: 0
-  zombiesInBetweenWaves: 01000000
+  zombiesInBetweenWaves: 07000000
   zombiesSpawnedInBetweenWaves: 0
   zombiesSpawned: 0
   zombiesKilledCurrent: 0

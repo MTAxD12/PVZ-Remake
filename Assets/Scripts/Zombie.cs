@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Zombie : MonoBehaviour
 {
@@ -37,7 +34,7 @@ public class Zombie : MonoBehaviour
         currentEatingSpeed = eatingSpeed;
         slowedSpeed = 0.5f * speed;
         slowedEatingSpeed = 2 * eatingSpeed;
-        gameManager.WinGame(gameObject);
+        //gameManager.WinGame(gameObject);
         /*
         GameObject wonPlant = Instantiate(gameManager.plantToWin, transform.position, Quaternion.identity, GameObject.Find("CanvasOver").transform);
         wonPlant.GetComponent<PlantCard>().enabled = false;
