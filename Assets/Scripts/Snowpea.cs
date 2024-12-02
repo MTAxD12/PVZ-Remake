@@ -12,9 +12,14 @@ public class Snowpea : MonoBehaviour
 
     private RaycastHit2D currentHit;
 
+    private AudioSource audioSource;
+
+    public AudioClip[] hitSounds;
+
     private void Start()
     {
         //Debug.Log(transform.position);
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
     private void Update()
     {
@@ -35,6 +40,7 @@ public class Snowpea : MonoBehaviour
     {
         isCooldown = true;
         Invoke("Cooldown", rechargeTime);
+        audioSource.PlayOneShot(hitSounds[Random.Range(0, hitSounds.Length)]);
 
         Vector3 spawnPos = new Vector3(transform.position.x + 0.56f, transform.position.y + 0.113f, transform.position.z);
         GameObject Peabullet = Instantiate(bullet, spawnPos, Quaternion.identity);

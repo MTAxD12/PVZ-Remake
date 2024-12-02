@@ -7862,6 +7862,7 @@ MonoBehaviour:
   wavesCount: 2
   zombiesPerWave: 0a0000000a000000
   activeWave: 0
+  waveText: {fileID: 6957620139843905941, guid: 3e9ba7b2d69c3644eabfb2a8174123ab, type: 3}
   zombiesInBetweenWaves: 070000000a000000
   zombiesSpawnedInBetweenWaves: 0
   zombiesSpawned: 0
