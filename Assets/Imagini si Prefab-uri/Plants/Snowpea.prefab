@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2007462115
-  m_SortingLayer: -3
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Sprite: {fileID: 2201535037821921783, guid: e1b6d03061e0f724e95e1bf026323de8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -122,6 +122,9 @@ MonoBehaviour:
   bulletMask:
     serializedVersion: 2
     m_Bits: 128
+  hitSounds:
+  - {fileID: 8300000, guid: f5049ea837e4e3f4fbe46fe0d893bb18, type: 3}
+  - {fileID: 8300000, guid: ba4f80f2f1a50754198e53aab2954502, type: 3}
 --- !u!61 &3242455970461448531
 BoxCollider2D:
   m_ObjectHideFlags: 0

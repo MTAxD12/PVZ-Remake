@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,7 @@ public class ZombieSpawner : MonoBehaviour
     public int wavesCount = 2;
     public int[] zombiesPerWave;
     public bool activeWave = false;
+    public GameObject waveText;
 
     public int[] zombiesInBetweenWaves;
     public int zombiesSpawnedInBetweenWaves;
@@ -40,8 +42,14 @@ public class ZombieSpawner : MonoBehaviour
 
     private Gamemanager gameManager;
 
+    private Animator waveAnim;
+
     private void Start()
     {
+        waveText = Instantiate(waveText, new Vector3(0, 0, 0), Quaternion.identity, GameObject.Find("CanvasOver").transform);
+        waveText.name = "WaveText";
+        waveAnim = GameObject.Find("WaveText").GetComponent<Animator>();    
+     
         //progress bar
         levelProgression.maxValue = 100f;
         for (int i = 0; i < wavesCount; i++)
@@ -130,7 +138,9 @@ public class ZombieSpawner : MonoBehaviour
 
         int lane = Random.Range(0, spawnPoints.Count);
         GameObject zombieToSpawn = GetRandomZombieType();
-        Instantiate(zombieToSpawn, spawnPoints[lane].position, Quaternion.identity, spawnPoints[lane]);
+        string zombieName = zombieToSpawn.name;
+        zombieToSpawn = Instantiate(zombieToSpawn, spawnPoints[lane].position, Quaternion.identity, spawnPoints[lane]);
+        zombieToSpawn.name = zombieName;
     }
 
     private GameObject GetRandomZombieType()
@@ -176,14 +186,25 @@ public class ZombieSpawner : MonoBehaviour
 
     private IEnumerator SpawnWave()
     {
+
+        waveAnim.SetBool("PlayAnim", true);
+
         yield return new WaitForSeconds(5f);
 
+        waveAnim.SetBool("PlayAnim", false);
+
+        zombiesSpawnedInBetweenWaves = 0;
+        zombieCooldownSpawn -= 2.5f;
+        zombieRemainingCooldown = zombieCooldownSpawn;
         zombiesMax++;
         zombiesSpawned++;
+
         AddSliderValue(wavePercent);
-
-        GameObject FlagZombie = Instantiate(GetRandomZombieType(), spawnPoints[spawnPoints.Count / 2].position, Quaternion.identity, spawnPoints[spawnPoints.Count/2]);
-
+ 
+        GameObject FlagZombie = GetRandomZombieType();
+        string zombieName = FlagZombie.name;
+        FlagZombie = Instantiate(GetRandomZombieType(), spawnPoints[spawnPoints.Count / 2].position, Quaternion.identity, spawnPoints[spawnPoints.Count/2]);
+        FlagZombie.name = zombieName;
         yield return new WaitForSeconds(2f);
 
         int zombiesToSpawnPerLane = zombiesPerWave[currentWave] / spawnPoints.Count;
@@ -192,14 +213,15 @@ public class ZombieSpawner : MonoBehaviour
         {
             foreach (Transform sp in spawnPoints)
             {
-                Instantiate(GetRandomZombieType(), sp.position, Quaternion.identity, sp);
+                FlagZombie = GetRandomZombieType();
+                zombieName = FlagZombie.name;
+                FlagZombie = Instantiate(FlagZombie, sp.position, Quaternion.identity, sp);
+                FlagZombie.name = zombieName;
                 zombiesSpawned++;
             }
 
             yield return new WaitForSeconds(4f);
         }
-        zombiesSpawnedInBetweenWaves = 0;
-        zombieCooldownSpawn -= 2.5f;
     }
 
     void AddSliderValue(float val)

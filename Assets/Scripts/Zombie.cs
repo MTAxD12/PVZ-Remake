@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Zombie : MonoBehaviour
@@ -26,8 +27,12 @@ public class Zombie : MonoBehaviour
     private ZombieSpawner zombieSpawner;
     private Gamemanager gameManager;
 
+    public AudioClip[] hitSounds;
+    private AudioSource audioSource;
+
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
         zombieSpawner = GameObject.Find("GameManage").GetComponent<ZombieSpawner>();
         gameManager = GameObject.Find("GameManage").GetComponent<Gamemanager>();
         currentSpeed = speed;
@@ -81,25 +86,6 @@ public class Zombie : MonoBehaviour
         }
     }
 
-    private IEnumerator EnterHouse()
-    {
-        Vector3 midPos = new Vector3(transform.position.x - 0.2f, -1f, -1f);
-        Vector3 finalPos = new Vector3(-11f, -1f, -1f);
-
-        gameManager.LoseGamePre();
-
-        while (Vector2.Distance(transform.position, midPos) > 0.01f)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, midPos, 2 * 1.25f * Time.deltaTime);
-            yield return null;
-        }
-
-        while (Vector2.Distance(transform.position, finalPos) > 0.01f)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, finalPos, 1 * Time.deltaTime);
-            yield return null;
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -147,6 +133,20 @@ public class Zombie : MonoBehaviour
     
     public void TakeDamage(float damageAmount)
     {
+        if(health <= 100)
+        {
+            audioSource.PlayOneShot(hitSounds[Random.Range(0, 3)]);
+        }
+        else
+        {
+            if (gameObject.name == "ZombieCone")
+                audioSource.PlayOneShot(hitSounds[Random.Range(3, 5)]);
+            else if (gameObject.name == "ZombieBucket")
+                audioSource.PlayOneShot(hitSounds[Random.Range(5, 7)]);
+            else
+                Debug.Log("eroare la sunet zombie");
+        }
+
         health -= damageAmount;
         Color colorDamaged = gameObject.GetComponent<SpriteRenderer>().color; colorDamaged.g = 0.5f; colorDamaged.b = 0.5f;
         gameObject.GetComponent<SpriteRenderer>().color = colorDamaged;
@@ -180,5 +180,25 @@ public class Zombie : MonoBehaviour
 
         Destroy(gameObject);
 
+    }
+    private IEnumerator EnterHouse()
+    {
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        Vector3 midPos = new Vector3(transform.position.x - 0.2f, -1f, -1f);
+        Vector3 finalPos = new Vector3(-11f, -1f, -1f);
+
+        gameManager.LoseGamePre();
+
+        while (Vector2.Distance(transform.position, midPos) > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, midPos, 2 * 1.25f * Time.deltaTime);
+            yield return null;
+        }
+
+        while (Vector2.Distance(transform.position, finalPos) > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, finalPos, 1 * Time.deltaTime);
+            yield return null;
+        }
     }
 }

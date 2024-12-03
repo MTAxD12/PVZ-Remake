@@ -107,6 +107,14 @@ MonoBehaviour:
   speed: 0.2
   eatingSpeed: 0.8
   eatingDamage: 20
+  hitSounds:
+  - {fileID: 8300000, guid: f8fe306eefb10a341bdd8cf4ee8a65b6, type: 3}
+  - {fileID: 8300000, guid: ab34f0e2827ac9144b31efbeffc1d4fe, type: 3}
+  - {fileID: 8300000, guid: b9c686fa2a958f247b8f2c8241cd7b22, type: 3}
+  - {fileID: 8300000, guid: 72d8f9cc783ce7f479bff90230bb8cd9, type: 3}
+  - {fileID: 8300000, guid: e5277824d89348a4aaa87f27bce3ee98, type: 3}
+  - {fileID: 8300000, guid: 9f0ec8d8227b7d1418b0faf761fef047, type: 3}
+  - {fileID: 8300000, guid: 691e56691ece8b34895f28164d7860fe, type: 3}
 --- !u!114 &7334439829122569012
 MonoBehaviour:
   m_ObjectHideFlags: 0

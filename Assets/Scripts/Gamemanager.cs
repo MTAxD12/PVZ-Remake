@@ -48,7 +48,7 @@ public class Gamemanager : MonoBehaviour
     public bool isFollowingCursor = false;
     public bool isUsingShovel = false;
 
-    // animations
+    //animations
     public Animator animatorLose;
     public Animator animatorWin;
 
@@ -59,6 +59,12 @@ public class Gamemanager : MonoBehaviour
     //player stats
     private PlayerData playerData;
 
+    //sounds
+    private AudioSource audioSource;
+    public AudioClip plantSFX;
+    public AudioClip looseMusic;
+    public AudioClip scream;
+    public AudioClip sunClick;
 
     private void Awake()
     {
@@ -74,6 +80,9 @@ public class Gamemanager : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = true;
+        audioSource.Play();
         playerData = SaveSystem.LoadPlayerData();
         Debug.Log($"Nivel curent: {playerData.currentLevel}, Cărți deblocate: {string.Join(", ", playerData.unlockedCards)}");
 
@@ -114,6 +123,7 @@ public class Gamemanager : MonoBehaviour
                     {
                         hit.collider.GetComponent<SpriteRenderer>().enabled = false;
                         GameObject Plant = Instantiate(plantsToSpawn[hoveringPlantID], hit.collider.transform.position, Quaternion.identity, hit.transform);
+                        audioSource.PlayOneShot(plantSFX);
                         isFollowingCursor = false;
 
                         MinusSun(hoveringPlantCost);
@@ -236,6 +246,8 @@ public class Gamemanager : MonoBehaviour
 
     public void AddSun(int ammount)
     {
+        if(ammount == 25)
+            audioSource.PlayOneShot(sunClick);
         sunAmount += ammount;
         sunText.text = sunAmount.ToString();
         UpdateCards();
@@ -329,7 +341,10 @@ public class Gamemanager : MonoBehaviour
         UIParentBehind.GetChild(1).gameObject.SetActive(false);
         UIParentOver.GetChild(0).gameObject.SetActive(false);
         Debug.Log("U lost");
-     
+
+
+        audioSource.Stop();
+        audioSource.PlayOneShot(looseMusic);
 
         Vector3 desiredPos = new Vector3(cameraObj.transform.position.x - 2.5f, 0f, -10f);
         while (Vector2.Distance(cameraObj.transform.position, desiredPos) > 0.01f)
@@ -338,10 +353,14 @@ public class Gamemanager : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
+
         animatorLose.Play("LoseAnimation");
 
-        yield return new WaitForSeconds(5f);
+        audioSource.PlayOneShot(scream);
+
+        yield return new WaitForSeconds(4f);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }

@@ -533,7 +533,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2022207301}
         m_TargetAssemblyTypeName: Menumanager, Assembly-CSharp
-        m_MethodName: RestartWithoutPlants
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -616,7 +616,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -19, y: 17}
-  m_SizeDelta: {x: 580.54, y: 64.79}
+  m_SizeDelta: {x: 616.48, y: 64.79}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1138580247
 MonoBehaviour:
@@ -638,9 +638,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'I do not own copyright rights on assets or game concept!
+  m_text: 'I do not own intelectual property used in this game!
 
-'
+    I just programmed
+    it.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 96c450a9d34673540a964f605d3b1942, type: 2}
   m_sharedMaterial: {fileID: -4190540011655717042, guid: 96c450a9d34673540a964f605d3b1942, type: 2}

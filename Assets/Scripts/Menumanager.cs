@@ -16,6 +16,16 @@ public class Menumanager : MonoBehaviour
         
     }
 
+    public void StartGame()
+    {
+        Debug.Log(playerData.currentLevel);
+        if (playerData.currentLevel > 7)
+            playerData.currentLevel = 7;
+        Debug.Log(playerData.currentLevel);
+
+        SceneManager.LoadScene(playerData.currentLevel);    
+    }
+
     public void RestartWithPlants()
     {
         playerData.currentLevel = 1;
