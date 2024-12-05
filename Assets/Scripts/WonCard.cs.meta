@@ -1,2 +1,12 @@
 fileFormatVersion: 2
 guid: c4efcf33a3a4e2646b0c652740677613
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - winMusic: {fileID: 8300000, guid: 9a1847f642c4e764eb3d0f656b3c067b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

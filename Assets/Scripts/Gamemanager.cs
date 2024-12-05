@@ -60,12 +60,8 @@ public class Gamemanager : MonoBehaviour
     private PlayerData playerData;
 
     //sounds
-    private AudioSource audioSource;
-    public AudioClip plantSFX;
-    public AudioClip looseMusic;
-    public AudioClip scream;
-    public AudioClip sunClick;
-
+    [HideInInspector] public AudioSource audioSource;
+    public AudioClips clips;
     private void Awake()
     {
         if (Instance == null)
@@ -80,8 +76,10 @@ public class Gamemanager : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.loop = true;
+        audioSource.clip = clips.backgroundMusic;
+        audioSource.volume = 0.2f;
         audioSource.Play();
         playerData = SaveSystem.LoadPlayerData();
         Debug.Log($"Nivel curent: {playerData.currentLevel}, Cărți deblocate: {string.Join(", ", playerData.unlockedCards)}");
@@ -123,7 +121,7 @@ public class Gamemanager : MonoBehaviour
                     {
                         hit.collider.GetComponent<SpriteRenderer>().enabled = false;
                         GameObject Plant = Instantiate(plantsToSpawn[hoveringPlantID], hit.collider.transform.position, Quaternion.identity, hit.transform);
-                        audioSource.PlayOneShot(plantSFX);
+                        audioSource.PlayOneShot(clips.plantSFX);
                         isFollowingCursor = false;
 
                         MinusSun(hoveringPlantCost);
@@ -247,7 +245,7 @@ public class Gamemanager : MonoBehaviour
     public void AddSun(int ammount)
     {
         if(ammount == 25)
-            audioSource.PlayOneShot(sunClick);
+            audioSource.PlayOneShot(clips.sunClick);
         sunAmount += ammount;
         sunText.text = sunAmount.ToString();
         UpdateCards();
@@ -270,6 +268,8 @@ public class Gamemanager : MonoBehaviour
 
     public void WinGame(GameObject lastZombie)
     {
+        if (lastZombie == null)
+            Debug.Log("e null");
         ZombieSpawner zombieSpawner = GetComponent<ZombieSpawner>();
         if (zombieSpawner.zombiesKilledTotal == zombieSpawner.zombiesMax) // 1 == 1 e ptr teste
         {
@@ -284,7 +284,7 @@ public class Gamemanager : MonoBehaviour
             }
             wonPlant.AddComponent<WonCard>();
         }
-        GetComponent<ZombieSpawner>().enabled = false;
+        zombieSpawner.enabled = false;
         GetComponent<Sunspawner>().enabled = false;
         string newCard = GetNewCardForLevel(playerData.currentLevel);
         if (!playerData.unlockedCards.Contains(newCard))
@@ -344,7 +344,7 @@ public class Gamemanager : MonoBehaviour
 
 
         audioSource.Stop();
-        audioSource.PlayOneShot(looseMusic);
+        audioSource.PlayOneShot(clips.looseMusic);
 
         Vector3 desiredPos = new Vector3(cameraObj.transform.position.x - 2.5f, 0f, -10f);
         while (Vector2.Distance(cameraObj.transform.position, desiredPos) > 0.01f)
@@ -357,7 +357,7 @@ public class Gamemanager : MonoBehaviour
 
         animatorLose.Play("LoseAnimation");
 
-        audioSource.PlayOneShot(scream);
+        audioSource.PlayOneShot(clips.scream);
 
         yield return new WaitForSeconds(4f);
 

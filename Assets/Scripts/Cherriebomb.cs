@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Cherriebomb : MonoBehaviour
@@ -9,10 +10,13 @@ public class Cherriebomb : MonoBehaviour
     [SerializeField] LayerMask zombieMask;
     private bool isExploding = false;
     private Vector2 initialSize;
+    private AudioSource audioSource;
+    public AudioClip boomSound;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
         initialSize = GetComponent<BoxCollider2D>().size;
     }
 
@@ -33,6 +37,7 @@ public class Cherriebomb : MonoBehaviour
 
     private void Explode()
     {
+        audioSource.PlayOneShot(boomSound);
         Vector2 center = transform.position;
 
         Collider2D[] zombies = Physics2D.OverlapBoxAll(center, explosionSize, 0f, zombieMask);
@@ -45,11 +50,15 @@ public class Cherriebomb : MonoBehaviour
 
         gameObject.GetComponent<SpriteRenderer>().sprite = explosionSprite;
         transform.localScale = new Vector2(1f, 1f);
-        Invoke("DestroyThis", 0.5f);
+        StartCoroutine(DestroyThis());
     }
 
-    private void DestroyThis()
+    private IEnumerator DestroyThis()
     {
+        yield return new WaitForSeconds(0.5f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }

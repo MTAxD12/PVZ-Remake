@@ -15,6 +15,17 @@ public class Squash : MonoBehaviour
     private Vector3 midPos;
     private Vector3 finalPos;
 
+    private AudioSource audioSource;
+    public AudioClip[] hmms;
+    public AudioClip hit;
+    private bool played = false;
+
+    private void Start()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
+
+
     private void FixedUpdate()
     {
         if (!isInAnimation)
@@ -36,7 +47,7 @@ public class Squash : MonoBehaviour
                 }
             }
 
-            currentHit = closestHit;
+            currentHit = closestHit;    
 
             if (currentHit.collider != null)
             {
@@ -48,13 +59,16 @@ public class Squash : MonoBehaviour
 
     private IEnumerator MoveUpAndDown()
     {
-        midPos = new Vector3(currentHit.collider.transform.position.x - 0.2f, transform.position.y + 1.5f, -1);
-        finalPos = new Vector3(currentHit.collider.transform.position.x - 0.2f, transform.position.y, -1);
+        audioSource.PlayOneShot(hmms[Random.Range(0, hmms.Length)]);
+        yield return new WaitForSeconds(1f);
+        midPos = new Vector3(currentHit.collider.transform.position.x - 0.1f, transform.position.y + 1.5f, -1);
+        finalPos = new Vector3(currentHit.collider.transform.position.x - 0.1f, transform.position.y, -1);
         while (Vector2.Distance(transform.position, midPos) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(transform.position, midPos, jumpSpeed * 1.25f * Time.deltaTime);
             yield return null; 
         }
+        audioSource.PlayOneShot(hit);
 
         while (Vector2.Distance(transform.position, finalPos) > 0.01f)
         {
@@ -62,7 +76,7 @@ public class Squash : MonoBehaviour
             yield return null; 
         }
 
-        Invoke("DestroyInstance", 0.2f);
+        Invoke("DestroyInstance", 0.5f);
     }
 
     private void DestroyInstance()
@@ -74,6 +88,11 @@ public class Squash : MonoBehaviour
     {
         if (other.TryGetComponent<Zombie>(out Zombie zombie))
         {
+            if(!played)
+            {
+                //audioSource.PlayOneShot(hit);
+                played = true;
+            }
             zombie.TakeDamage(zombie.health);
         }
     }

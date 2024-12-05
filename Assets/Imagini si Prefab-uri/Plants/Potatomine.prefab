@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2007462115
-  m_SortingLayer: -3
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Sprite: {fileID: -8582278558207032788, guid: 58c5f999720fc7140bc28e7140b33cd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,10 +120,11 @@ MonoBehaviour:
   grownSprite: {fileID: -8582278558207032788, guid: 58c5f999720fc7140bc28e7140b33cd9, type: 3}
   boomSprite: {fileID: -6663060808079024650, guid: 82426f99ae8509d49aa2ebeb830aecfc, type: 3}
   growTime: 14
-  explosionSize: {x: 1.3, y: 0.5}
+  explosionSize: {x: 0.3, y: 0.5}
   zombieMask:
     serializedVersion: 2
     m_Bits: 128
+  boomSound: {fileID: 8300000, guid: 88bd29d0db34f0b4b8d3114e7afe6526, type: 3}
 --- !u!61 &5380387744051110578
 BoxCollider2D:
   m_ObjectHideFlags: 0

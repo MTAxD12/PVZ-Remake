@@ -13,10 +13,13 @@ public class Potatomine : MonoBehaviour
     private Vector2 center;
     private bool isGrown = false;
     private bool isBoom = false;
-    
+    private AudioSource audioSource;
+    public AudioClip boomSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
         gameObject.GetComponent<SpriteRenderer>().sprite = initialSprite;
     }
 
@@ -47,6 +50,7 @@ public class Potatomine : MonoBehaviour
 
     void Boom()
     {
+        audioSource.PlayOneShot(boomSound);
         isBoom = true;
         gameObject.GetComponent<SpriteRenderer>().sprite = boomSprite;
         transform.localScale = new Vector2(0.5f, 0.5f);

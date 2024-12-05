@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+
 public class WonCard : MonoBehaviour
 {
     private Gamemanager gameManager;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +23,8 @@ public class WonCard : MonoBehaviour
     private void TakeWonCard()
     {
         StartCoroutine(TakeWonCard2());
+        gameManager.audioSource.Stop();
+        gameManager.audioSource.PlayOneShot(gameManager.clips.winMusic);
     }
 
     private IEnumerator TakeWonCard2()

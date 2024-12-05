@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fadf566894b2264897d772f435f76cb, type: 3}
+  m_Name: AudioClips
+  m_EditorClassIdentifier: 
+  plantSFX: {fileID: 8300000, guid: a3e6df78cd1950249a633138a1c65c92, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 84e78c449c0094d4fb12bbcee8494328, type: 3}
+  winMusic: {fileID: 8300000, guid: 9a1847f642c4e764eb3d0f656b3c067b, type: 3}
+  looseMusic: {fileID: 8300000, guid: e9f0fb5dece52e340bed03652005b215, type: 3}
+  scream: {fileID: 8300000, guid: f116d7e83b46ab648813d522d7516bca, type: 3}
+  sunClick: {fileID: 8300000, guid: 9964be3d6c25aea43877deaaaab129da, type: 3}

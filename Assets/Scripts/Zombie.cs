@@ -23,11 +23,14 @@ public class Zombie : MonoBehaviour
 
     private bool isDead = false;
     private bool enteredHouse = false;
+    public bool isWaveZombie = false;
 
     private ZombieSpawner zombieSpawner;
     private Gamemanager gameManager;
 
     public AudioClip[] hitSounds;
+    public AudioClip[] groans;
+    public AudioClip[] chomps;
     private AudioSource audioSource;
 
     void Start()
@@ -48,11 +51,14 @@ public class Zombie : MonoBehaviour
         wonPlant.transform.GetChild(3).gameObject.SetActive(false);
         wonPlant.AddComponent<WonCard>();
         */
-    }
-
-    private void Update()
-    {
-
+        if(isWaveZombie)
+        {
+            Invoke("Groan", Random.Range(0, 50));
+        }
+        else
+        {
+            InvokeRepeating("Groan", 2f, 30f);
+        }
     }
 
     void FixedUpdate()
@@ -86,6 +92,10 @@ public class Zombie : MonoBehaviour
         }
     }
 
+    private void Groan()
+    {
+        audioSource.PlayOneShot(groans[Random.Range(0, groans.Length)]);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -104,6 +114,7 @@ public class Zombie : MonoBehaviour
         while (eatingPlant != null && eatingPlant.health > 0)
         {
             plant.TakeDamage(eatingDamage);
+            audioSource.PlayOneShot(chomps[Random.Range(0, chomps.Length)]);
             yield return new WaitForSeconds(currentEatingSpeed); 
         }
 
@@ -147,7 +158,7 @@ public class Zombie : MonoBehaviour
                 Debug.Log("eroare la sunet zombie");
         }
 
-        health -= damageAmount;
+        health -= damageAmount; 
         Color colorDamaged = gameObject.GetComponent<SpriteRenderer>().color; colorDamaged.g = 0.5f; colorDamaged.b = 0.5f;
         gameObject.GetComponent<SpriteRenderer>().color = colorDamaged;
         Invoke("DamageColor", 0.15f);

@@ -15,7 +15,7 @@ public class Peanut : MonoBehaviour
         // Only call ChangeHp when health changes state
         if (hp != previousHp)
         {
-            if (hp < 500 && hp > 200 && !isLow)
+            if (hp < 400 && hp > 200 && !isLow)
             {
                 isLow = true;
                 isVeryLow = false;
@@ -25,12 +25,6 @@ public class Peanut : MonoBehaviour
             {
                 isLow = false;
                 isVeryLow = true;
-                ChangeHp();
-            }
-            else if (hp >= 500 && (isLow || isVeryLow))
-            {
-                isLow = false;
-                isVeryLow = false;
                 ChangeHp();
             }
 
