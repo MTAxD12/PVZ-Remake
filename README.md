@@ -64,5 +64,5 @@ If you have any questions or feedback about this project, feel free to reach out
 
 - **GitHub:** [MTAxD12](https://github.com/MTAxD12)
 - **Linkedin:** [Andrei Preda](https://www.linkedin.com/in/andrei-preda-59aba1309/)
-- **Email:** [andrei.foco@yahoo.com]
+- **Email:** andrei.foco@yahoo.com
 
