@@ -61,7 +61,7 @@ This project is for educational and personal use only. It is not intended for co
 
 If you have any questions or feedback about this project, feel free to reach out:
 
-- [**LinkedIn**](https://www.linkedin.com/in/andrei-preda-59aba1309/)
+- [**Linkedin**](https://www.linkedin.com/in/andrei-preda-59aba1309/)
 - [**Email**](mailto:andrei.foco@yahoo.com)
-- [**GitHub**] [your-username](https://github.com/MTAxD12)
+- [**GitHub**](https://github.com/MTAxD12)
 
