@@ -111,8 +111,9 @@ public class Zombie : MonoBehaviour
     }
     private IEnumerator EatPlant(Plant plant)
     {
-        while (eatingPlant != null && eatingPlant.health > 0)
+        while (eatingPlant != null && eatingPlant.health > 0 && eatingPlant.GetComponent<Collider2D>().isActiveAndEnabled)
         {
+            Debug.Log("eating: " +plant.name);
             plant.TakeDamage(eatingDamage);
             audioSource.PlayOneShot(chomps[Random.Range(0, chomps.Length)]);
             yield return new WaitForSeconds(currentEatingSpeed); 

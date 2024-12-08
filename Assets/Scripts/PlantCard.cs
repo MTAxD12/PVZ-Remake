@@ -44,9 +44,13 @@ public class PlantCard : MonoBehaviour
         if (!isCooldown)
         {
             if (gameManager.sunAmount >= cost)
+            {
                 gameManager.StartHoveringPlant(id, cost);
+                backgroundImagine.color = cooldown;
+                imagineCard.color = cooldown;
+            }
             else
-                Debug.Log("Not enough sun");
+            Debug.Log("Not enough sun");
         }
         else
             Debug.Log("The plant is on cooldown");  

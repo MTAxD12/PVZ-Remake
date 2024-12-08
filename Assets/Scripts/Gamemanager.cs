@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
@@ -99,11 +100,14 @@ public class Gamemanager : MonoBehaviour
 
             if (isFollowingCursor)
             {
+                Vector2 mousePos = Camera.main.ScreenToWorldPoint((Vector2)Input.mousePosition);
+                hoveringPlant.transform.position = mousePos;
+
                 foreach (Transform tile in snapPoints)
                 {
                     tile.GetComponent<SpriteRenderer>().enabled = false;
                 }
-                if (hit.collider)
+                if (hit.collider && hit.transform.childCount == 0)
                 {
                     hit.collider.GetComponent<SpriteRenderer>().enabled = true;
                     hit.collider.GetComponent<SpriteRenderer>().sprite = plantsToSpawn[hoveringPlantID].GetComponent<SpriteRenderer>().sprite;
@@ -111,9 +115,10 @@ public class Gamemanager : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    isFollowingCursor = false;
                     if(hit.collider)
                         hit.collider.GetComponent<SpriteRenderer>().enabled = false;
+
+                    StopHoveringPlant();
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -122,16 +127,15 @@ public class Gamemanager : MonoBehaviour
                         hit.collider.GetComponent<SpriteRenderer>().enabled = false;
                         GameObject Plant = Instantiate(plantsToSpawn[hoveringPlantID], hit.collider.transform.position, Quaternion.identity, hit.transform);
                         audioSource.PlayOneShot(clips.plantSFX);
-                        isFollowingCursor = false;
 
                         MinusSun(hoveringPlantCost);
                         plantsHUD[hoveringPlantID].GetComponent<PlantCard>().StartCooldown();
-                        hoveringPlantID = -1;
-                        hoveringPlantCost = -1;
+
+                        StopHoveringPlant();
                     }
                     else
                     {
-                        Debug.Log("e ocupat nene");
+                        StopHoveringPlant();
                     }
                 }
             }
@@ -155,30 +159,27 @@ public class Gamemanager : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Destroy(shovel);
-                    shovel = null;
-                    isUsingShovel = false;
                     if (hit.collider && hit.transform.childCount > 0)
                         hit.transform.GetChild(0).GetComponent<SpriteRenderer>().color = normalColor;
+
+                    StopHoveringShovel();
                 }
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (hit.collider && hit.transform.childCount > 0)
                     {
                         Destroy(hit.transform.GetChild(0).gameObject);
-                        isUsingShovel = false;
-                        Destroy(shovel);
-                        shovel = null;
+
+                        StopHoveringShovel();
                     }
                     else
                     {
-                        Debug.Log("nu e nici o planta aici");
+                        StopHoveringShovel();
                     }
                 }
             }
         }
     }
-
     private string GetNewCardForLevel(int level)
     {
         // Exemplu de cărți bazate pe nivel
@@ -219,8 +220,27 @@ public class Gamemanager : MonoBehaviour
         {
             hoveringPlantCost = cost;
             hoveringPlantID = id;
+            hoveringPlant = new GameObject("HoveringPlant");
+            hoveringPlant.AddComponent<SpriteRenderer>();
+            hoveringPlant.GetComponent<SpriteRenderer>().sprite = plantsToSpawn[id].GetComponent<SpriteRenderer>().sprite;
+            hoveringPlant.transform.localScale = new Vector3(0.6f, 0.6f, 1);
             isFollowingCursor = true;
         }
+    }
+
+    private void StopHoveringPlant()
+    {
+        UpdateCards();
+
+        //plantsHUD[hoveringPlantID].transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f);
+        //plantsHUD[hoveringPlantID].transform.GetChild(1).GetComponent<Image>().color = new Color(1f, 1f, 1f);
+
+
+        Destroy(hoveringPlant);
+        hoveringPlant = null;
+        isFollowingCursor = false;
+        hoveringPlantID = -1;
+        hoveringPlantCost = -1;
     }
 
     public void StartHoveringShovel()
@@ -233,7 +253,16 @@ public class Gamemanager : MonoBehaviour
             shovel.GetComponent<SpriteRenderer>().sprite = shovelSprite;
         }
     }
-  
+
+    private void StopHoveringShovel()
+    {
+        Destroy(shovel);
+        shovel = null;
+        isUsingShovel = false;
+        
+    }
+
+
     private void LoadSnapPoints()
     {
         foreach (Transform snapPoint in snapPointsParent)

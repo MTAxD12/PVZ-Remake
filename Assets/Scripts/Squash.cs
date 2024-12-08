@@ -23,6 +23,8 @@ public class Squash : MonoBehaviour
     private void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
+        GetComponent<BoxCollider2D>().enabled = false;
+
     }
 
 
@@ -69,6 +71,7 @@ public class Squash : MonoBehaviour
             yield return null; 
         }
         audioSource.PlayOneShot(hit);
+        GetComponent<BoxCollider2D>().enabled = true;
 
         while (Vector2.Distance(transform.position, finalPos) > 0.01f)
         {

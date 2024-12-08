@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6342899453976786292}
   - component: {fileID: 5380387744051110578}
   - component: {fileID: 7127279633539355564}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Potatomine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   grownSprite: {fileID: -8582278558207032788, guid: 58c5f999720fc7140bc28e7140b33cd9, type: 3}
   boomSprite: {fileID: -6663060808079024650, guid: 82426f99ae8509d49aa2ebeb830aecfc, type: 3}
   growTime: 14
-  explosionSize: {x: 0.3, y: 0.5}
+  explosionSize: {x: 0.5, y: 0.5}
   zombieMask:
     serializedVersion: 2
     m_Bits: 128
@@ -159,7 +159,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.49870312, y: -0.077397466}
+  m_Offset: {x: -0.15, y: -0.077397466}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}

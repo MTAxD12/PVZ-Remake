@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f274c25bd34718b48a8e145fc4b93be4
+guid: a88c4a90b25015042bcb77c9869494b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2090989793093784818
-    second: Peanut_Very_Low_0
+      213: 5439474025244060994
+    second: latest_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Peanut_Very_Low_0
+      name: latest_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
+        width: 173
         height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f492566320b40d10800000000000000
-      internalID: 2090989793093784818
+      spriteID: 24de2af6ec4ec7b40800000000000000
+      internalID: 5439474025244060994
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Peanut_Very_Low_0: 2090989793093784818
+      latest_0: 5439474025244060994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

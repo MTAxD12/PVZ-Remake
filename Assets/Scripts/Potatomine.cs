@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,8 +51,14 @@ public class Potatomine : MonoBehaviour
 
     void Boom()
     {
-        audioSource.PlayOneShot(boomSound);
         isBoom = true;
+
+        zombies = Physics2D.OverlapBoxAll(center, explosionSize, 0f, zombieMask);
+        Debug.Log("asdadasdasd");
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(boomSound);
+        }
         gameObject.GetComponent<SpriteRenderer>().sprite = boomSprite;
         transform.localScale = new Vector2(0.5f, 0.5f);
 
@@ -60,14 +67,16 @@ public class Potatomine : MonoBehaviour
             Debug.Log(zombie.transform.name);
             zombie.GetComponent<Zombie>().TakeDamage(1000);
         }
-        Invoke("DestroyThis", 0.5f);
+        StartCoroutine(DestroyThis());
     }
-
-    void DestroyThis()
+    private IEnumerator DestroyThis()
     {
+        yield return new WaitForSeconds(0.5f);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
-
     void Grow()
     {
         isGrown = true;
