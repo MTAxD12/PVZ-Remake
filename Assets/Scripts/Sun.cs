@@ -1,7 +1,4 @@
-﻿using JetBrains.Annotations;
-using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-using UnityEngine.Rendering;
+﻿using UnityEngine;
 
 public class Sun : MonoBehaviour
 {
