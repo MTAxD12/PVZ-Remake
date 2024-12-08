@@ -15,3 +15,4 @@ MemoryCaptures/
 *.DS_Store
 .idea/
 *.log
+.vs/
