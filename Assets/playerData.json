@@ -1,12 +1,9 @@
 {
-    "currentLevel": 13,
+    "currentLevel": 4,
     "unlockedCards": [
         "Peashooter",
         "Sunflower",
         "Cherriebomb",
-        "Wallnut",
-        "Potatomine",
-        "Snowpea",
-        "Squash"
+        "Wallnut"
     ]
 }
