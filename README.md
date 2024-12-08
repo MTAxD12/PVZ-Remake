@@ -31,7 +31,7 @@ This project is a personal remake of the iconic *Plants vs. Zombies* game. It wa
 
 ### Option 2: Download the Game
 
-1. Navigate to the [Releases](https://github.com/your-username/plants-vs-zombies-remake/releases) section of this repository.
+1. Navigate to the [Releases](https://github.com/MTAxD12/PVZ-Remake/releases) section of this repository.
 2. Download the latest release version.
 3. Extract the downloaded archive and run the executable file to play the game.
 
