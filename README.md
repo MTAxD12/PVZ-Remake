@@ -39,7 +39,10 @@ This project is a personal remake of the iconic *Plants vs. Zombies* game. It wa
 
 ## Screenshots
 
-TO be added.
+![image](https://github.com/user-attachments/assets/a3b25a65-9b58-4373-9d0f-34602aa5db26)
+![image](https://github.com/user-attachments/assets/ab3d4270-760d-4589-bb6c-cd01b17edda0)
+![image](https://github.com/user-attachments/assets/ecde6ca3-5be7-43c1-bb03-ed204d424f7d)
+![image](https://github.com/user-attachments/assets/27c4c015-b588-49e8-a623-e42a169684cd)
 
 ---
 
